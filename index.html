@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopWave - Your General Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Shop<span>Wave</span></a>
+      <nav class="nav">
+        <a href="#" class="nav-link active" data-category="all">Home</a>
+        <a href="#" class="nav-link" data-category="electronics">Electronics</a>
+        <a href="#" class="nav-link" data-category="clothing">Clothing</a>
+        <a href="#" class="nav-link" data-category="home">Home & Living</a>
+        <a href="#" class="nav-link" data-category="sports">Sports</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search products...">
+          <button class="search-btn">&#128269;</button>
+        </div>
+        <button class="cart-toggle" id="cart-toggle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Amazing Deals</h1>
+      <p>Shop the latest trends across electronics, fashion, home essentials, and more.</p>
+      <a href="#products" class="btn btn-primary">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories container">
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="category-grid">
+      <div class="category-card" data-category="electronics">
+        <div class="category-icon">&#128187;</div>
+        <h3>Electronics</h3>
+      </div>
+      <div class="category-card" data-category="clothing">
+        <div class="category-icon">&#128085;</div>
+        <h3>Clothing</h3>
+      </div>
+      <div class="category-card" data-category="home">
+        <div class="category-icon">&#127968;</div>
+        <h3>Home & Living</h3>
+      </div>
+      <div class="category-card" data-category="sports">
+        <div class="category-icon">&#9917;</div>
+        <h3>Sports</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products-section container" id="products">
+    <div class="products-header">
+      <h2 class="section-title">Our Products</h2>
+      <div class="sort-box">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="default">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="name">Name A-Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="product-grid" id="product-grid">
+      <!-- Products injected by JS -->
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Stay in the Loop</h2>
+      <p>Subscribe for exclusive deals and new arrivals.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>Shop<span>Wave</span></h3>
+        <p>Your one-stop general store for everything you need.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">FAQ</a>
+        <a href="#">Shipping Info</a>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <a href="#" data-category="electronics">Electronics</a>
+        <a href="#" data-category="clothing">Clothing</a>
+        <a href="#" data-category="home">Home & Living</a>
+        <a href="#" data-category="sports">Sports</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 ShopWave. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cart-close">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty">Your cart is empty</p>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkout-btn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
